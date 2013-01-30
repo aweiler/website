@@ -1,0 +1,33 @@
+---
+layout: base
+---
+<div class="container_12 topmargin">
+  <div class="grid_3" id="info">
+    {% include info.markdown %}
+  </div>
+  
+  <div class="grid_9">
+    <div class="grid_9 alpha omega" id="navbar">
+      {% include navbar.html %}
+    </div>
+    
+    <div class="grid_9 alpha omega">
+      <div class="{{ page.div_class }}">
+        <div id="page-content">
+          {{ content }}
+        </div>
+
+        {% if page.bib %}
+          <div class="references">
+            <h3>References</h3>
+            {% bibtex _plugins/ieee.bst bib.bib %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if page.comments %}
+        {% include comments.html %}
+      {% endif %}
+    </div>
+  </div>
+</div>

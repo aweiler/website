@@ -1,0 +1,29 @@
+---
+layout: default
+wide: false
+title: Other Blogs & Websites
+comments: true
+---
+
+Blogging has been a mainstream source of information for quite a few years, but it is only now catching on in the academic world. Here are some computer vision and machine learning blogs I like.
+
+* Computer vision
+**(inset) "Quantombone":http://quantombone.blogspot.com/
+  "The philosophy of computational object recognition, scene understanding, machine learning, and musings on the future of computer vision" from "Tomasz Malisiewicz":http://www.cs.cmu.edu/~tmalisie/ at CMU.
+**(inset) "Computer Blindness":http://computerblindness.blogspot.com/
+  The research blog of "Roman Shapovalov":http://shapovalov.ro/ at the Moscow State University.
+<!--**(inset) "Sex, Drugs, and Applied Science":http://sexdrugsandappliedscience.com/
+  The research blog of Boris Yangel, a developer at Yandex image search (biggest Russian search engine).-->
+**(inset) "Learning in Vision":http://vimsu99.blogspot.com/
+  Vidit Jain's (Yahoo! Labs) blog on computer vision, with a focus on information retrieval.
+* General machine learning
+  **(inset) "Please Scoop Me":http://pleasescoopme.com/
+    Jonathan Chang has good posts about topic models and random statistical visualizations.
+  **(inset) "Inductio Ex Machine":http://mark.reid.name/iem/
+    Mark Reid's research blog on machine learning and statistical inference.
+  **(inset) "Inherent Uncertainty":http://www.inherentuncertainty.org/
+    Jake Abernethy (and some other mostly Berkeley ML people) post "a range of thoughts on Learning and Game-playing, Prediction and Decision-making."
+  **(inset) "Hunch: Machine Learning Theory":http://hunch.net/
+    John Langford's blog.
+
+If you'd like to see an addition to this list, please post a comment below. If you'd like to see a removal, email me (link in the footer).

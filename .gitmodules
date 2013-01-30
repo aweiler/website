@@ -1,0 +1,3 @@
+[submodule "_plugins/bibjekyll"]
+	path = _plugins/bibjekyll
+	url = git@github.com:sergeyk/bibjekyll.git

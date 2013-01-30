@@ -1,0 +1,470 @@
+
+<dl>
+
+<dt>
+<a name="Torralba2007">&nbsp;</a>
+</dt>
+<dd>
+<b>Sharing visual features for multiclass and multiview object detection.</b>
+ Antonio Torralba, Kevin&nbsp;P Murphy, and William&nbsp;T Freeman.
+ <em>PAMI</em>, 29(5):854-869, May 2007.
+[&nbsp;<a href="bib_bib.html#Torralba2007">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/TPAMI.2007.1055">DOI</a>&nbsp;| 
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/17356204">http</a>&nbsp;]
+<blockquote><font size="-1">
+We consider the problem of detecting a large number of different classes of objects in cluttered scenes. Traditional approaches require applying a battery of different classifiers to the image, at multiple locations and scales. This can be slow and can require a lot of training data since each classifier requires the computation of many different image features. In particular, for independently trained detectors, the (runtime) computational complexity and the (training-time) sample complexity scale linearly with the number of classes to be detected. We present a multitask learning procedure, based on boosted decision stumps, that reduces the computational and sample complexity by finding common features that can be shared across the classes (and/or views). The detectors for each class are trained jointly, rather than independently. For a given performance level, the total number of features required and, therefore, the runtime cost of the classifier, is observed to scale approximately logarithmically with the number of classes. The features selected by joint training are generic edge-like features, whereas the features chosen by training each class separately tend to be more object-specific. The generic features generalize better and considerably reduce the computational cost of multiclass object detection.
+</font></blockquote>
+<p>
+</dd>
+
+
+<dt>
+<a name="Razavi2011">&nbsp;</a>
+</dt>
+<dd>
+<b>Scalable Multi-class Object Detection</b>.
+ Nima Razavi, Juergen Gall, and Luc&nbsp;Van Gool.
+ In <em>CVPR</em>, 2011.
+[&nbsp;<a href="bib_bib.html#Razavi2011">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Grubb2012">&nbsp;</a>
+</dt>
+<dd>
+<b>SpeedBoost : Anytime Prediction with Uniform Near-Optimality</b>.
+ Alexander Grubb and J&nbsp;Andrew Bagnell.
+ In <em>AISTATS</em>, 2012.
+[&nbsp;<a href="bib_bib.html#Grubb2012">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Lee2006">&nbsp;</a>
+</dt>
+<dd>
+<b>Efficient Structure Learning of Markov Networks using L 1
+  -Regularization</b>.
+ Su-In Lee, Varun Ganapathi, and Daphne Koller.
+ In <em>NIPS</em>, 2006.
+[&nbsp;<a href="bib_bib.html#Lee2006">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Golovin2010">&nbsp;</a>
+</dt>
+<dd>
+<b>Near – Optimal Bayesian Active Learning with Noisy Observations</b>.
+ Daniel Golovin, Andreas Krause, and Debajyoti Ray.
+ In <em>NIPS</em>, pages 1-13, 2010.
+[&nbsp;<a href="bib_bib.html#Golovin2010">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/arXiv:1010.3091v1">arXiv</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Butko2009">&nbsp;</a>
+</dt>
+<dd>
+<b>Optimal scanning for faster object detection</b>.
+ N&nbsp;J Butko and J&nbsp;R Movellan.
+ <em>CVPR</em>, (1):2751-2758, June 2009.
+[&nbsp;<a href="bib_bib.html#Butko2009">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2009.5206540">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5206540">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="pascal-voc-2010">&nbsp;</a>
+</dt>
+<dd>
+<b>The PASCAL VOC Challenge</b>, M&nbsp;Everingham, L&nbsp;Van Gool, C&nbsp;K&nbsp;I Williams,
+  J&nbsp;Winn, and A&nbsp;Zisserman.
+ http://www.pascal-network.org/challenges/VOC/, 2010.
+[&nbsp;<a href="bib_bib.html#pascal-voc-2010">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Torralba2004">&nbsp;</a>
+</dt>
+<dd>
+<b>Contextual Models for Object Detection Using Boosted Random Fields</b>.
+ Antonio Torralba, Kevin&nbsp;P Murphy, and William&nbsp;T Freeman.
+ <em>MIT CSAIL Technical Report</em>, 2004.
+[&nbsp;<a href="bib_bib.html#Torralba2004">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Felzenszwalb2010a">&nbsp;</a>
+</dt>
+<dd>
+<b>Object detection with discriminatively trained part-based models.</b>
+ Pedro&nbsp;F Felzenszwalb, Ross&nbsp;B Girshick, David McAllester, and Deva
+  Ramanan.
+ <em>PAMI</em>, 32(9):1627-1645, September 2010.
+[&nbsp;<a href="bib_bib.html#Felzenszwalb2010a">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/TPAMI.2009.167">DOI</a>&nbsp;| 
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/20634557">http</a>&nbsp;]
+<blockquote><font size="-1">
+We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI-SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function.
+</font></blockquote>
+<p>
+</dd>
+
+
+<dt>
+<a name="Vijayanarasimhan2010">&nbsp;</a>
+</dt>
+<dd>
+<b>Visual Recognition and Detection Under Bounded Computational Resources</b>.
+ Sudheendra Vijayanarasimhan and Ashish Kapoor.
+ In <em>CVPR</em>, pages 1006-1013, 2010.
+[&nbsp;<a href="bib_bib.html#Vijayanarasimhan2010">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Dalal2005">&nbsp;</a>
+</dt>
+<dd>
+<b>Histograms of Oriented Gradients for Human Detection</b>.
+ N&nbsp;Dalal and B&nbsp;Triggs.
+ In <em>CVPR</em>, pages 886-893, 2005.
+[&nbsp;<a href="bib_bib.html#Dalal2005">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2005.177">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1467360">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Roy2002">&nbsp;</a>
+</dt>
+<dd>
+<b>Exponential Family PCA for Belief Compression in POMDPs</b>.
+ Nicholas Roy and Geoffrey Gordon.
+ In <em>NIPS</em>, 2002.
+[&nbsp;<a href="bib_bib.html#Roy2002">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Desai2009">&nbsp;</a>
+</dt>
+<dd>
+<b>Discriminative models for multi-class object layout</b>.
+ Chaitanya Desai, Deva Ramanan, and Charless Fowlkes.
+ In <em>ICCV</em>, pages 229-236, September 2009.
+[&nbsp;<a href="bib_bib.html#Desai2009">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/ICCV.2009.5459256">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5459256">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Gao2011">&nbsp;</a>
+</dt>
+<dd>
+<b>Active Classification based on Value of Classifier</b>.
+ Tianshi Gao and Daphne Koller.
+ In <em>NIPS</em>, 2011.
+[&nbsp;<a href="bib_bib.html#Gao2011">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Vijayanarasimhan2011">&nbsp;</a>
+</dt>
+<dd>
+<b>Large-Scale Live Active Learning: Training Object Detectors with Crawled
+  Data and Crowds</b>.
+ Sudheendra Vijayanarasimhan and Kristen Grauman.
+ In <em>CVPR</em>, 2011.
+[&nbsp;<a href="bib_bib.html#Vijayanarasimhan2011">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Vedaldi2009">&nbsp;</a>
+</dt>
+<dd>
+<b>Multiple kernels for object detection</b>.
+ Andrea Vedaldi, Varun Gulshan, Manik Varma, and Andrew Zisserman.
+ <em>ICCV</em>, pages 606-613, September 2009.
+[&nbsp;<a href="bib_bib.html#Vedaldi2009">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/ICCV.2009.5459183">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5459183">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Jaimovich2010">&nbsp;</a>
+</dt>
+<dd>
+<b>FastInf: An Efficient Approximate Inference Library</b>.
+ Ariel Jaimovich and Ian Mcgraw.
+ <em>Journal of Machine Learning Research</em>, 11:1733-1736, 2010.
+[&nbsp;<a href="bib_bib.html#Jaimovich2010">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Galleguillos2010">&nbsp;</a>
+</dt>
+<dd>
+<b>Context based object categorization: A critical survey</b>.
+ Carolina Galleguillos and Serge Belongie.
+ <em>Computer Vision and Image Understanding</em>, 114(6):712-722, June
+  2010.
+[&nbsp;<a href="bib_bib.html#Galleguillos2010">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1016/j.cviu.2010.02.004">DOI</a>&nbsp;| 
+<a href="http://linkinghub.elsevier.com/retrieve/pii/S1077314210000640">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Xiao2010a">&nbsp;</a>
+</dt>
+<dd>
+<b>SUN database: Large-scale scene recognition from abbey to zoo</b>.
+ Jianxiong Xiao, James Hays, K&nbsp;A Ehinger, A&nbsp;Oliva, and Antonio
+  Torralba.
+ In <em>CVPR</em>. IEEE, 2010.
+[&nbsp;<a href="bib_bib.html#Xiao2010a">bib</a>&nbsp;| 
+<a href="http://www.computer.org/portal/web/csdl/doi/10.1109/CVPR.2010.5539970">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Divvala2009">&nbsp;</a>
+</dt>
+<dd>
+<b>An empirical study of context in object detection</b>.
+ S&nbsp;K Divvala, D&nbsp;Hoiem, J&nbsp;H Hays, A.a. Efros, and M&nbsp;Hebert.
+ In <em>CVPR</em>, pages 1271-1278, June 2009.
+[&nbsp;<a href="bib_bib.html#Divvala2009">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2009.5206532">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5206532">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Viola2001">&nbsp;</a>
+</dt>
+<dd>
+<b>Rapid object detection using a boosted cascade of simple features</b>.
+ Paul Viola and Michael Jones.
+ In <em>CVPR</em>, 2001.
+[&nbsp;<a href="bib_bib.html#Viola2001">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2001.990517">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=990517">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Fan2005">&nbsp;</a>
+</dt>
+<dd>
+<b>Efficient Multiclass Object Detection by a Hierarchy of Classifiers</b>.
+ Xiaodong Fan.
+ In <em>CVPR</em>, pages 716-723. Ieee, 2005.
+[&nbsp;<a href="bib_bib.html#Fan2005">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2005.140">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1467339">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Sutton1998">&nbsp;</a>
+</dt>
+<dd>
+<em>Reinforcement Learning: An Introduction</em>.
+ Richard&nbsp;S Sutton and Andrew&nbsp;G Barto.
+ MIT Press, 1998.
+[&nbsp;<a href="bib_bib.html#Sutton1998">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Felzenszwalb2010b">&nbsp;</a>
+</dt>
+<dd>
+<b>Cascade object detection with deformable part models</b>.
+ Pedro&nbsp;F Felzenszwalb, Ross&nbsp;B Girshick, and David McAllester.
+ In <em>CVPR</em>, pages 2241-2248. IEEE, June 2010.
+[&nbsp;<a href="bib_bib.html#Felzenszwalb2010b">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2010.5539906">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5539906">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Kovashka2011">&nbsp;</a>
+</dt>
+<dd>
+<b>Actively Selecting Annotations Among Objects and Attributes</b>.
+ Adriana Kovashka, Sudheendra Vijayanarasimhan, and Kristen Grauman.
+ In <em>ICCV</em>, 2011.
+[&nbsp;<a href="bib_bib.html#Kovashka2011">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Chen2012">&nbsp;</a>
+</dt>
+<dd>
+<b>Classifier Cascade for Minimizing Feature Evaluation Cost</b>.
+ Minmin Chen, Zhixiang Eddie, Xu&nbsp;Kilian, and Saint Louis.
+ In <em>AISTATS</em>, 2012.
+[&nbsp;<a href="bib_bib.html#Chen2012">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Ernst2005">&nbsp;</a>
+</dt>
+<dd>
+<b>Tree-Based Batch Mode Reinforcement Learning</b>.
+ Damien Ernst, Pierre Geurts, and Louis Wehenkel.
+ <em>Journal of Machine Learning Research</em>, 6:503-556, 2005.
+[&nbsp;<a href="bib_bib.html#Ernst2005">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Paletta2005">&nbsp;</a>
+</dt>
+<dd>
+<b>Q-learning of sequential attention for visual object recognition from
+  informative local descriptors</b>.
+ Lucas Paletta, Gerald Fritz, and Christin Seifert.
+ In <em>ICML</em>, pages 649-656, New York, New York, USA, 2005. ACM
+  Press.
+[&nbsp;<a href="bib_bib.html#Paletta2005">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/1102351.1102433">DOI</a>&nbsp;| 
+<a href="http://portal.acm.org/citation.cfm?doid=1102351.1102433">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Lowe2004">&nbsp;</a>
+</dt>
+<dd>
+<b>Distinctive Image Features from Scale-Invariant Keypoints</b>.
+ David&nbsp;G Lowe.
+ <em>IJCV</em>, 60(2):91-110, November 2004.
+[&nbsp;<a href="bib_bib.html#Lowe2004">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94">DOI</a>&nbsp;| 
+<a href="http://www.springerlink.com/openurl.asp?id=doi:10.1023/B:VISI.0000029664.99615.94">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Vogel2008">&nbsp;</a>
+</dt>
+<dd>
+<b>Target-directed attention: Sequential decision-making for gaze
+  planning</b>.
+ Julia Vogel and Nando de&nbsp;Freitas.
+ <em>ICRA</em>, pages 2372-2379, May 2008.
+[&nbsp;<a href="bib_bib.html#Vogel2008">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/ROBOT.2008.4543568">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4543568">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="imagenet_cvpr09">&nbsp;</a>
+</dt>
+<dd>
+<b>ImageNet: A Large-Scale Hierarchical Image Database</b>.
+ Jia Deng, W.&nbsp;Dong, R.&nbsp;Socher, L.-J. Li, K.&nbsp;Li, and Li&nbsp;Fei-Fei.
+ In <em>CVPR</em>, 2009.
+[&nbsp;<a href="bib_bib.html#imagenet_cvpr09">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Oliva2001a">&nbsp;</a>
+</dt>
+<dd>
+<b>Modeling the Shape of the Scene: A Holistic Representation of the Spatial
+  Envelope</b>.
+ Aude Oliva and Antonio Torralba.
+ <em>IJCV</em>, 42(3):145-175, 2001.
+[&nbsp;<a href="bib_bib.html#Oliva2001a">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Kwok2004">&nbsp;</a>
+</dt>
+<dd>
+<b>Reinforcement Learning for Sensing Strategies</b>.
+ Cody Kwok and Dieter Fox.
+ In <em>IROS</em>, 2004.
+[&nbsp;<a href="bib_bib.html#Kwok2004">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Yu2009">&nbsp;</a>
+</dt>
+<dd>
+<b>Active Sensing</b>.
+ Shipeng Yu, Balaji Krishnapuram, Romer Rosales, and R&nbsp;Bharat Rao.
+ In <em>AISTATS</em>, pages 639-646, 2009.
+[&nbsp;<a href="bib_bib.html#Yu2009">bib</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+<a name="Lampert2008a">&nbsp;</a>
+</dt>
+<dd>
+<b>Beyond sliding windows: Object localization by efficient subwindow
+  search</b>.
+ Christoph&nbsp;H Lampert, Matthew&nbsp;B Blaschko, and Thomas Hofmann.
+ <em>CVPR</em>, pages 1-8, June 2008.
+[&nbsp;<a href="bib_bib.html#Lampert2008a">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1109/CVPR.2008.4587586">DOI</a>&nbsp;| 
+<a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4587586">http</a>&nbsp;]
+
+</dd>
+</dl>

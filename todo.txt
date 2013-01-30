@@ -1,0 +1,1 @@
+[ ] Add lectures as blog posts, use the bsm.md file and check the mathjax 

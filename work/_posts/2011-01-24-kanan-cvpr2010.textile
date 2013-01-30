@@ -1,0 +1,54 @@
+---
+title: Review of Kanan and Cottrell, Robust Classification of Objects, Faces, and Flowers Using Natural Image Statistics, CVPR 2010.
+summary: Review of a paper that uses a saliency map, ICA-based feature, and Naive Bayes Nearest Neighbor approach to achieve impressive classification results on a few single-object datasets.
+layout: default
+comments: true 
+math: true
+---
+
+h2. {{ page.title }}
+
+The paper's approach has three parts. The first is using an ICA-based spatial pyramid feature; the second is computing a saliency map to sample interest points; and the third is in using Naive Bayes Nearest Neighbor (NBNN) for classification. The approach is evaluated on three single-object datasets: Caltech-101 and -256, Aleix and Robert faces dataset of 120 individuals with 26 images each, and 102 Flowers (8200 images). The results are best yet published for Caltech-101 single-feature approaches, and match best multiple-feature performances; comparable to state-of-the-art on Caltech-256; match state-of-the-art on the AR Faces; and beat the single previously published result on the Flowers dataset.
+
+h3. ICA-based Local Features and Saliency
+
+The images are first pre-processed by converting to a standard size, converting to the LMS color space (designed to match human color receptor distributions), normalizing, and then applying a nonlinear transform inspired by modulation to luminance that happens in photoreceptors (a logarithmic compression). [Note: It would be interesting to see the effects of not performing this mapping.]
+
+ICA filters of size $b \times b$ ($b$ tuned on a Butterfly and Bird dataset to 24 pixels) are learned on about 5000 color image patches from the McGill color image dataset. To learn $d$ ICA features, the authors first run PCA on the patches, discard the first principal component, retain $d$ following principal components, and then learn the ICA decomposition. I'm not quite sure how this works--I guess ICA is then only able to learn $d$ non-garbage bases?
+
+h4. Saliency Map
+
+The ICA bases are used to place a saliency map over the image following the Saliency Using Natural statistics (SUN) framework \cite{Zhang:2008:SUN}. The basic idea is that saliency of a point is the inverse $P(F)^{-1}$ of its probability under the ICA model $P(F=\mathbf{f})=\prod_i P(\mathbf{f}_i)$. Each unidimensional distribution is fit with a generalized Gaussian distribution:
+\[ P(\mathbf{f}_i) = \frac{\theta_i}{2 \sigma_i \Gamma(\theta_i^{-1})} exp(-|\frac{\mathbf{f}_i}{\sigma_i}|^{\theta_i}) \]
+Parameters are fit still using the McGill color database. A further strange nonlinear weighting of the dimensions of $\mathbf{f}$ is then done to weight rarer responses more heavily.
+
+h3. Fixations
+
+The saliency map is normalized to a probability distribution, and "fixations" are sampled from it $T$ times. At each location $l_t$, an interesting fixation feature is extracted. It is a spatial pyramid over an area of $w=51$ pixels, using average pooling. So, the initial window of $w \times w \times d$ is represented by a vector of size $21d$, where $21 = 4 \times 4 \times 2 \times 2 \times 1 \times 1$ shows the structure of the spatial pyramid. Importantly, the normalized location $l_t$ of the fixation is also stored. To cast SIFT in this framework, we would set $w=17$, $d=8$, and the spatial aggregation would be a flat $4 \times 4$ grid. 
+
+After gathering $T$ fixations on every image in the training set, the unit-normalized SP vectors are then additionally processed by retaining only the first 500 PCA components and whitening them. The chain of re-normalizations in this paper is quite long and I would appreciate theoretical justifications for these decisions.
+
+h3. Classification
+
+The paper uses Kernel Density Estimation (KDE) to model $P(\mathbf{g}_t|C=k)$, where $\mathbf{g}_t$ is the vector of fixation features. A Naive Bayes assumption is made, such that each fixation contributes independently to the total probability. The posterior is estimated with Bayes rule, assuming uniform class priors. 1-nearest neighbor KDE is used, and the Euclidean distance between the fixation locations is considered in addition to the feature-to-exemplar distance. The final posterior probability is: 
+\[ P(\mathbf{g}_t | C=k) \propto max_i \frac{1}{||\mathbf{w}_{k,i}-\mathbf{g}_t||^2_2 + \alpha ||\mathbf{v}_{k,i}-\ell_t||^2_2 + \epsilon} \]
+where $\mathbf{w}_{k,i}$ is a vector representing the $i$'th examplar of a fixation from class $k$.
+
+h3. Discussion
+
+The authors attribute the strength of their approach largely to the exemplar-based classifier. Their approach does outperform the comparable single-descriptor version of the Boiman and Irani NBNN classifier \cite{Boiman:2008}; that could be due to a number of factors:
+
+1. -They also use location information in their comparison of fixations.- EDIT: NBNN paper also appends location to the feature vector.
+2. They sample features from a saliency map (vs. densely for NBNN)
+3. They use their ICA feature instead of SIFT and other standard descriptors.
+
+It would be excellent to see a controlled evaluation of each of these factors. The paper as it is presents a very specific and unorthodox approach, and does not justify many of its design decisions.
+
+My questions:
+
+1. What is the contribution of the saliency map? How would the performance change under a random sampling scheme? What about an interest-point sampling scheme?
+2. Why is the saliency computed at a single scale? The only reason for this working well is that the dataset is single-object and fixed-scale.
+3. How would performance change if a standard feature, for example SIFT, was extracted instead of the ICA SP feature?
+4. What is the contribution of the location feature? Why is it weighted at $\alpha=0.5$; what would cross-validation tune it to?
+
+In my mind, the most important part of the approach is NN classification. It would be interesting to re-implement this framework with a different bottom-up saliency map, for example the multi-scale one used in \cite{Alexe:2010} and traditional SIFT features.

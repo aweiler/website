@@ -1,0 +1,68 @@
+---
+title: Review of Itti and Koch, Computational Modeling of Visual Attention, Nature Neuroscience 2001.
+summary: Summary of the 2001 paper that synthesizes research on computational models of visual attention to highlight several important aspects of attention that any model should explain.
+layout: default 
+comments: true
+math: true
+---
+
+h2. {{ page.title }}
+
+h3. Why Attention?
+
+p. The reigning paradigm for object detection is a scanning window approach, where object-specific windows are considered over different scales and locations of an image. This is an expensive and inelegant approach, and assuredly not how humans perform visual search. While of course we do not know how that is done, some observations can be grouped under a loose term of _attention_; for example, search time will be lowered if people are told a distinguishing characteristic, such as color, of an object they are looking for in a cluttered scene.
+
+The main view of attention in this sense is by analogy to a spotlight. At least in our visual systems, not every part of a scene can be processed at a high level at once. Attention is the bottleneck through which high level processing flows. If we would use intuitions and experimental observations about visual attention in computational models of vision, we should focus on replacing exhaustive window search with a more intelligent spotlight.
+
+Here I will summarize an influential synthesis of attentional models by Itti and Koch. In a follow-up post, I will go over a newly published work from Chikkerur _et al._ outlining a highly promising Bayesian model of attention.
+
+h3. The Review
+
+The authors of this 2001 paper synthesize prior work on computational models of attentions and list five essential components of a model for bottom-up attention:
+
+# Perceptual saliency depends on surrounding context of stimuli. This is pre-attentive.
+# Bottom-up processing seems to culminate in a single "saliency map."
+# Sequential nature of attention needs to be explained by something like inhibition of return.
+# Implicit (covert) and eye movement (overt) attentional deployments are coupled, posing coordinate system challenges to computational models.
+# Scene understanding and object recognition influence attention.
+
+The authors first review the two-component framework for attention. Bottom-up attention is driven by saliency cues in the image and is on the order of 50ms. Top-down attention is driven by high-level cues and is on the order of 200ms, which is also around the time it takes to re-fixate the eyes.
+
+Interesting fact: visual sensory input is estimated to be $10^7$-$10^8$ bits per second at the optic nerve. Authors make the bottleneck analogy: "Attention allows us to break down the problem of understanding a visual scene into a rapid series of computationally less demanding, localized visual analysis problems."
+
+I am not that interested in the brain areas involved, but a basic view never hurts. From the visual cortex, processing proceeds through the _dorsal stream_ of the posterior parietal cortex and the _ventral stream_ of the inferotemporal cortex. The prefrontal cortex is commonly viewed as the seat of attention. The processing streams converge there. Motor systems and high-level cognition are controlled by the PFC, including eye movement through the superior colliculus.
+
+h4. Pre-attentive computation of visual features
+
+Early vision proceeds in parallel across the entire visual field. It is not purely feedforward. Attention can modulate early processing, virtually increasing the stimulus strength. Different features contribute with different weights. There is little evidence for cross-modality interactions at a given visual area, and we lack the ability to efficiently detect conjunctive targets.
+
+Most importantly, feature contrast, not absolute strength, is what matters. Contrast extends past neuronal receptive fields (and contour completion could be due to long-range connections). My aside: our best current models of local feature descriptors attempt to achieve this effect, rather inelegantly.
+
+h4. Saliency map
+
+Although there are multiple feature representation of the visual field, there is only one attentional focus. Most computational models hypothesize that the feature maps feed into a unique saliency map, which then controls attentional deployment. There is not a lot of biological evidence given for this hypothesis, but models with that assumption sometimes match human performance.
+
+For example, the authors' previously published computational model that uses non-classical surround modulation effects (as mentioned above) seems to reproduce human behavior in some visual search tasks, as well as some automatic salient object detection in real color images.
+
+h4. Attentional selection; interplay with eye movements
+
+Given a saliency map, attention is deployed to the most salient point in the visual scene. There needs to be a mechanism for sequential selection of points of lower saliency, however--otherwise, attention would remain fixed. An efficient computational strategy is transient inhibition of the currently attended location, or _inhibition of return (IOR)_.
+
+The paper does not mention that the patterns of sequences of attentional deployments may carry information useful to object recognition, which is the hypothesis of a paper I plan on reviewing [1].
+
+IOR seems simple but shows complex behavior. For example, it seems to be object-bound, tracking moving objects and compensating for motion of the observer. More basically, covert attention must interplay with overt attention (eye movements), which poses challenges to the coordinate system for IOR.
+
+On the subject of covert vs. overt attention, there is evidence that covert attention is deployed to the endpoint of an upcoming saccade.
+
+h4. Recognition
+
+The previous four points describe a bottom-up attentional system, accounting for the first few hundred milliseconds after stimulus presentation. After that, top-down effects can strongly affect attentional deployment. The authors outline several models of top-down influence, focusing in particular on a model by Schill _et al.__ [2], which will be subject of a later review. In a nutshell, the model's assumption is that objects are recognized iteratively from coarse to fine, with eye movements that maximize information gain.
+
+Another model that I will review is the "scanpath theory" [3] of Lawrence Stark, the late Berkeley optometry professor, who was a strong proponent of a prior-driven perceptual system. Eye movements over a scene, then, are mostly due to our cognitive model of what we expect to see.
+<hr />
+
+fn1. Paletta et al. Q-Learning of Sequential Attention for Visual Object Recognition from Informative Local Descriptors. ICML (2005)
+
+fn2. Schill et al. Scene analysis with saccadic eye movements: Top-down and bottom-up modeling. J. Electron. Imaging (2001) vol. 10 (1) pp. 152
+
+fn3. Stark et al. Representation of human vision in the brain: How does human perception recognize images?. J. Electron. Imaging (2001) vol. 10 (1) pp. 123

@@ -1,0 +1,28 @@
+---
+layout: default
+title: Software & Code for Computer Vision and Machine Learning
+comments: true
+---
+
+h2. Links to code and software
+
+There is one good argument against "open science" in the sense of real-time dissemination of research work: it prevents encapsulation of thought that is necessary to original research directions. But there is no good argument for not providing the source code, or at least some method of replication, for the experimental results that have been published. And some people want to provide code just to lower the barrier to entry for others--some things, like camera calibration, should only be coded up once.
+
+This is my collection of software (mostly open source) for computer vision and general machine learning.
+
+* General purpose computer vision code
+  **(inset) "OpenCV":http://opencv.willowgarage.com/wiki/
+    C++ framework providing fast computer vision primitives. Mostly old school stuff. Nice interface for local feature detection/description/matching. Example code includes a BOW classifier, HOG pedestrian detection, and old-school stuff. Ongoing work in GPU implementation.
+  **(inset) "Nick's Machine Perception Toolbox":http://mplab.ucsd.edu/~nick/NMPT/
+    C++ code for Fast Salience, Multinomial-Infomax POMDP, GentleBoost, and some other stuff related to attention-based machine vision. Dependent on OpenCV 2.1+.
+* Code related to visual attention
+  **(inset) "Sharat Chikkerur's Code":http://code.google.com/p/sharat-cbcl/
+    Code for Sharat's Bayesian inference attention model; {CUDA,MATLAB,OpenCV} HMAX implementations; misc.
+* Code for the Kinect and RGBD(RGB with Depth) vision
+  **(inset) "Nicolas Burrus's Kinect Library":http://nicolas.burrus.name/index.php/Research/KinectUseNestk and  "Demos":http://nicolas.burrus.name/index.php/Research/KinectRgbDemoV4
+    Nicolas Burrus built on top of "libfreenect":https://github.com/OpenKinect/libfreenect and provides a sweet API to the Kinect. He includes several demos on top of the library, with compiled binaries for all major platforms. Very instructive.
+  **(inset) "Point Cloud Library":http://www.ros.org/wiki/pcl
+    n-D Point Clouds and 3D geometry processing.
+  
+If you'd like to see an addition to this list, please post a comment below. If you'd like to see a removal, email me.
+
